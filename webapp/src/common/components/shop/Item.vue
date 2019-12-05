@@ -23,22 +23,26 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn
+      <!-- <v-btn
         color="orange"
         text
       >
         Share
-      </v-btn>
-
+      </v-btn> -->
      
       <v-btn
-        color="orange"
+        color= "orange"
+        absolute = "true"
+        left = "true"
         text
       >
-        Info
+       Details
       </v-btn>
+
        <v-btn
-        color="orange"
+        color= "orange"
+        absolute = "true"
+        right = "true"
         text
         @click="addItemToCart(item)"
       >

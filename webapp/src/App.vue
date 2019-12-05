@@ -27,19 +27,15 @@
                 <router-link to="/cart" class="nav-link js-scroll-trigger">Cart</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
                 <router-link to="/orders" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin' || this.$store.state.user.userLevel == 'Employee'">Orders</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
                 <router-link to="/employees" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin'">Employees</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
                 <router-link to="/login" class="nav-link js-scroll-trigger" v-if="!this.$store.state.user.loggedIn">Login</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
                 <div v-on:click="logout"  class="nav-link js-scroll-trigger" v-if="this.$store.state.user.loggedIn">Logout</div>
               </ul>
               <!-- <ul class="nav-item"> -->
@@ -99,7 +95,6 @@ $image-path: '~@/../mdb/mdbvue/img';
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 #logo {
   text-align: left;

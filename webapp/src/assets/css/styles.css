@@ -5,7 +5,7 @@
  */
  
  body { 
-     overflow-x:hidden;
+     overflow-x:auto;
      font-family:'Roboto Slab','Segoe UI','Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
     }
 
@@ -116,7 +116,7 @@
  #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover {
      color:#fed136
     }
- @media (min-width:992px) {
+ @media (min-width:992px) { 
      #mainNav{ 
          padding-top:25px;
          padding-bottom:25px;
