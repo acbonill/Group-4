@@ -16,7 +16,8 @@
               <ul class="nav-item">
                 <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
               </ul>
-              <ul class="nav-item">
+              <ul class="nav-item"
+                  v-on:click = "setShopCategory('Hot Deals')">
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Hot Deals</router-link>
               </ul>
               <ul class="nav-item">
@@ -68,7 +69,7 @@
 </template>
 
 <script>
-
+import {CartModel} from "@/store.js";
 export default {
   name: 'app',
   methods: {
@@ -76,7 +77,14 @@ export default {
       this.$store.dispatch("logout").then(() => {
         return this.$router.push("/");
       });
-    }
+      CartModel.clearCartItems();
+    },
+    setShopCategory(category) {	
+        this.$store.state.currentCategory = category;	
+        // console.log("category", category)	
+        // this.$router.push('/shop');	
+        console.log(this.category);	
+      }	,
   }
 }
 </script>

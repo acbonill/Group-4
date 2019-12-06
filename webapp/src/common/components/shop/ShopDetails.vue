@@ -18,6 +18,7 @@
         </v-col>
       </v-row>
     </v-container>
+
   </div>
 </template>
 
@@ -27,17 +28,19 @@ import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import  ShopListings from '@/common/components/shop/ShopListings.vue';
 import {ShopModel} from '@/store.js';
 import {fetchShopItems} from "@/controllers/shop/ShopController.js";
+
 export default {
   name: "ShopDetails",
   components: {
       SidebarMenu,
-      ShopListings
+      ShopListings,
   },
   props: {
   },
 
   data() {
     return {
+      showScheduleForm: false,
       items: ShopModel.getShopItems(),
       currentClicked: this.getCategory(),
       menu: [
@@ -87,6 +90,7 @@ export default {
       console.log("Just clicked ", item.title);
       this.currentClicked = item.title;
       console.log(this.currentClicked);
+      this.$modal.show('hello-world');
     },
     getCategory() {
       // debugger;
@@ -120,4 +124,8 @@ h1 {
     text-align: left;
     margin: 0 50px;
 }
+
+.modal {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
 </style>
