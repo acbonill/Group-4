@@ -17,7 +17,6 @@
                 <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- TODO: hot deals should be linked to sale section -->
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Hot Deals</router-link>
               </ul>
               <ul class="nav-item">

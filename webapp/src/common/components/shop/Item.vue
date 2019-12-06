@@ -1,6 +1,7 @@
 <template>
   <div id="item-name" class="name">
     <v-card
+      class = "mx-auto"
       max-width="300"
     >
     <v-card-title style="font-size:30px"><span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element1">{{item.name}}</span></v-card-title>
@@ -11,7 +12,6 @@
       width="300px"
       :src="item.image"
     >
-
     </v-img>
 
     <v-card-subtitle class="pb-0" style="margin-bottom:5px;">
@@ -21,34 +21,28 @@
     <v-card-text class="text--primary">
       <span style="border:1px solid grey; border-radius:7px; padding:5px;" contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element3">{{item.remainingInventory}}</span> remaining in stock
     </v-card-text>
-
-    <v-card-actions>
-      <!-- <v-btn
-        color="orange"
-        text
-      >
-        Share
-      </v-btn> -->
-     
-      <v-btn
-        color= "orange"
-        absolute = "true"
-        left = "true"
-        text
-      >
-       Details
-      </v-btn>
-
-       <v-btn
-        color= "orange"
-        absolute = "true"
-        right = "true"
-        text
-        @click="addItemToCart(item)"
-      >
+      <v-card-actions>
+        <v-btn
+          @click="show = !show"
+        >
+          Details 
+          <v-icon> {{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }} </v-icon> 
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn
+          color= "primary"
+          text
+         @click="addItemToCart(item)"
+        >
         Add to Cart
-      </v-btn>
-    </v-card-actions>
+        </v-btn>
+      </v-card-actions>
+      <v-expand-transition>
+        <div v-show = "show">
+          <v-divider></v-divider>
+          <v-card-text>{{item.info}}</v-card-text>
+        </div>
+      </v-expand-transition>>
   </v-card>
   </div>
 </template>
@@ -56,6 +50,9 @@
 <script>
 import {CartModel} from "@/store.js";
 export default {
+  data: () => ({
+      show:false,
+  }),
   name: 'Item',
   props: {
     item: Object
